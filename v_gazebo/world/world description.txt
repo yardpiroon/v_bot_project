@@ -1,0 +1,6 @@
+emtry_room เป็น wolrd ห้องสองห้องเปล่าๆ
+room_box ห้องสองห้อง กับ Basic Object ใน Gazebo Box Cylinder 
+room_furniture ห้องสองห้องกับโต๊ะ เก้่าอี ****** ผมไม่แน่ใจว่า world นี้จะ launch ในเครื่องอื่นได้ไหม เพราะไฟล์ dea ของ model ผม set path เป็น model:// ไม่ได้ gazebo หาไม่เจอ
+set  <gazebo_ros gazebo_media_path="${prefix}"/>
+     <gazebo_ros gazebo_model_path="${find v_gazebo}/models"/> ก็ยังไม่ได้ อันไม่รู้เกี่ยวไหมครับ 55555
+

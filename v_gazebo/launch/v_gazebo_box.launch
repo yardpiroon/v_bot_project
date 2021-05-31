@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<!-- เป็นการ Set parameter สำหรับตัว model หุ่นยนต์ โดยแปลงมาจากไฟล์ Xacro ของหุ่นที่เขียนไว้ -->
+<param name="robot_description" 
+command="$(find xacro)/xacro $(find v_description)/urdf/v_bot.xacro" />
+
+<!-- Run node spawn_urdf บน package gazebo โดยเอา model จาก parameter robot_description ที่ set ไปมาแสดงใน gazebo -->
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output = "screen"
+args="-param robot_description -urdf -model v" />
+
+	<!-- Find Path package ของ gazebo เพื่อรันโปรแกรมเปล่าๆ -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--  เพืม arg world ของ gazebo ไปที่ path ของ world ที่เราสร้าง-->
+      <arg name="world_name" value="$(find v_gazebo)/world/room_box.world"/>
+      <arg name="paused" value="false"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="true"/>
+      <arg name="recording" value="false"/>
+      <arg name="debug" value="false"/>
+    </include>
+
+
+
+
+
+
+
+  </launch>
